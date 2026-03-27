@@ -55,6 +55,7 @@ function FeaturedProjectCard({
       <a
         href={href}
         {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+        aria-label={`${project.title} — view project`}
         className="group relative block aspect-video w-full overflow-hidden rounded-[28px] border border-black/10 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.35)] outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
       >
         <img
@@ -64,19 +65,13 @@ function FeaturedProjectCard({
           loading={index === 0 ? "eager" : "lazy"}
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-black/[0.88] via-black/45 to-black/25"
+          className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"
           aria-hidden
         />
-        <div className="relative flex h-full min-h-0 w-full flex-col items-center justify-center px-5 py-8 text-center sm:px-10 sm:py-12 lg:px-16">
-          <span className="inline-flex rounded-full bg-blue-600 px-4 py-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-sm sm:text-xs">
-            {project.category}
-          </span>
-          <h3 className="mt-4 max-w-[min(100%,52rem)] font-mega text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[0.95] tracking-[-0.02em] text-white sm:mt-5">
+        <div className="relative flex h-full min-h-0 w-full flex-col items-center justify-end px-5 pb-8 pt-16 text-center sm:px-10 sm:pb-10 lg:px-16">
+          <h3 className="max-w-[min(100%,52rem)] font-mega text-[clamp(1.35rem,3.5vw,2.5rem)] uppercase leading-[0.95] tracking-[-0.02em] text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]">
             {project.title}
           </h3>
-          <p className="mt-3 max-w-[min(100%,40rem)] font-sans text-sm font-normal leading-relaxed text-white/90 sm:mt-4 sm:text-base">
-            {project.description}
-          </p>
         </div>
       </a>
     </motion.article>
