@@ -134,28 +134,19 @@ export function About({ aboutProfileSlotRef }: AboutProps) {
             </div>
           </motion.div>
 
-          {/* Right: profile slot + mobile image */}
+          {/* Right: profile slot for scroll journey (desktop only — no duplicate photo on mobile) */}
           <motion.div
             initial={{ opacity: 0, x: 16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="relative order-2 mx-auto w-full max-w-md lg:col-span-5 lg:mx-0 lg:max-w-none lg:justify-self-end"
+            className="relative order-2 hidden w-full max-w-md lg:col-span-5 lg:mx-0 lg:block lg:max-w-none lg:justify-self-end"
           >
             <div
               ref={aboutProfileSlotRef}
               className="mx-auto hidden h-[500px] w-full max-w-[400px] shrink-0 rounded-[2rem] lg:mx-0 lg:ml-auto lg:block"
               aria-hidden
             />
-            <div className="overflow-hidden rounded-[2rem] border border-surface-border bg-surface-muted shadow-2xl lg:hidden">
-              <img
-                src="/profile.jpg"
-                alt="Abdul Muez"
-                className="aspect-[3/4] w-full object-cover object-top"
-                width={440}
-                height={586}
-              />
-            </div>
             <div className="pointer-events-none absolute -right-4 -top-4 hidden h-36 w-36 rounded-full bg-blue-500/10 blur-3xl lg:block" />
           </motion.div>
         </div>
