@@ -1,0 +1,85 @@
+{
+  "projects": [
+    {
+      "title": "Sway (InstaGlam)",
+      "slug": "sway-instaglam",
+      "description": "MERN social platform with JWT + refresh tokens, Google OAuth, OTP verification, real-time chat with Socket.io, follow graph, and a personalised feed. Backend on Render, frontend on Vercel.",
+      "category": "Full Stack",
+      "imageUrl": "/projects/sway.svg",
+      "liveUrl": "https://sway-frontend-app.vercel.app/",
+      "tags": ["MongoDB", "Express", "React", "Node", "Socket.io"],
+      "featured": true,
+      "order": 1
+    },
+    {
+      "title": "MelodyHub",
+      "slug": "melodyhub",
+      "description": "Music playlist app with JWT-protected REST APIs, MVC backend, and a responsive React UI with context-based state for playlists and tracks.",
+      "category": "Full Stack",
+      "imageUrl": "/projects/melodyhub.svg",
+      "liveUrl": "https://melodyhub-frontend.vercel.app/",
+      "tags": ["React", "Node", "Express", "MongoDB", "Socket.io"],
+      "featured": true,
+      "order": 2
+    },
+    {
+      "title": "HACA Landing",
+      "slug": "haca-landing",
+      "description": "Marketing landing experience built while interning at HACA — focused on clear hierarchy, responsive layout, and fast perceived performance.",
+      "category": "Frontend",
+      "imageUrl": "/projects/haca.svg",
+      "liveUrl": "https://haca-landing-page-six.vercel.app/",
+      "tags": ["React", "Tailwind", "Vercel"],
+      "featured": true,
+      "order": 3
+    },
+    {
+      "title": "TaskFlow",
+      "slug": "taskflow-todo",
+      "description": "Focused productivity UI for managing tasks — CRUD flows, optimistic updates, and a clean layout suitable for daily use.",
+      "category": "Frontend",
+      "imageUrl": "/projects/todo.svg",
+      "liveUrl": "https://todo-list-phi-nine-73.vercel.app/",
+      "tags": ["React", "TypeScript", "Vercel"],
+      "featured": true,
+      "order": 4
+    },
+    {
+      "title": "Product suite (WIP)",
+      "slug": "live-wip",
+      "description": "A larger in-progress build — architecture and integrations are still being refined; live preview available on request.",
+      "category": "In progress",
+      "imageUrl": "/projects/wip.svg",
+      "liveUrl": "#contact",
+      "tags": ["MERN", "Private"],
+      "featured": true,
+      "order": 5
+    }
+  ],
+  "blogPosts": [
+    {
+      "title": "Shipping MERN apps with confidence",
+      "slug": "shipping-mern-apps",
+      "excerpt": "Patterns I use for auth, env config, and deployment when taking a MERN stack from localhost to Vercel + Render.",
+      "coverImage": "/blog/cover-1.svg",
+      "category": "Engineering",
+      "publishedAt": "2025-11-15T00:00:00.000Z"
+    },
+    {
+      "title": "Socket.io in real products",
+      "slug": "socket-io-real-products",
+      "excerpt": "When to reach for WebSockets, how presence and rooms map to UX, and pitfalls to avoid in your first chat feature.",
+      "coverImage": "/blog/cover-2.svg",
+      "category": "Insights",
+      "publishedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "title": "Designing APIs before the UI",
+      "slug": "apis-before-ui",
+      "excerpt": "A short workflow for contract-first endpoints that keep React components thin and predictable.",
+      "coverImage": "/blog/cover-3.svg",
+      "category": "Tutorials",
+      "publishedAt": "2025-09-18T00:00:00.000Z"
+    }
+  ]
+}

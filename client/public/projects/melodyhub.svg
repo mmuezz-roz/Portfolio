@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="g" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1b2e"/>
+      <stop offset="100%" stop-color="#0c0c0e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#g)"/>
+  <text x="600" y="380" text-anchor="middle" fill="#a78bfa" font-family="system-ui,sans-serif" font-size="42" font-weight="600">MelodyHub</text>
+  <text x="600" y="430" text-anchor="middle" fill="#71717a" font-family="system-ui,sans-serif" font-size="18">Placeholder — replace later</text>
+</svg>
