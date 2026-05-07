@@ -1,13 +1,49 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { 
+  SiReact, 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiExpress, 
+  SiMongodb, 
+  SiSocketdotio, 
+  SiSupabase, 
+  SiVercel,
+  SiRender,
+  SiPostgresql,
+  SiJsonwebtokens,
+  SiNodedotjs,
+  SiGithub
+} from "react-icons/si";
+import { LogoLoop } from "./common/LogoLoop";
+
+const techLogos = [
+  { node: <SiReact />, title: "React" },
+  { node: <SiNextdotjs />, title: "Next.js" },
+  { node: <SiTypescript />, title: "TypeScript" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS" },
+  { node: <SiNodedotjs />, title: "Node.js" },
+  { node: <SiExpress />, title: "Express" },
+  { node: <SiGithub />, title: "GitHub" },
+  { node: <SiMongodb />, title: "MongoDB" },
+  { node: <SiPostgresql />, title: "PostgreSQL" },
+  { node: <SiSupabase />, title: "Supabase" },
+  { node: <SiSocketdotio />, title: "Socket.io" },
+  { node: <SiJsonwebtokens />, title: "JWT" },
+  { node: <SiVercel />, title: "Vercel" },
+  { node: <SiRender />, title: "Render" },
+];
+
+
 
 const services = [
   {
     n: "1",
     title: "APIs & backend",
     bullets: [
-      "REST APIs with Express and MVC structure",
-      "MongoDB modeling with Mongoose",
+      "REST APIs with Express, TypeScript and MVC",
+      "MongoDB & Supabase (PostgreSQL) modeling",
       "JWT, refresh tokens, Google OAuth, OTP flows",
     ],
   },
@@ -15,7 +51,7 @@ const services = [
     n: "2",
     title: "Frontend & UX",
     bullets: [
-      "React (Vite) and Next.js interfaces",
+      "React (Vite), Next.js and TypeScript interfaces",
       "Tailwind CSS, responsive layouts, component-driven UI",
       "Context-based state and pragmatic performance",
     ],
@@ -69,6 +105,7 @@ export function Services() {
     >
       <div className="mx-auto max-w-content px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16">
         <div className="mx-auto w-full max-w-[min(100%,42rem)] text-left lg:mx-0 lg:max-w-[58%]">
+          {/* ... (existing header and list) */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +177,34 @@ export function Services() {
             </ul>
           </motion.div>
         </div>
+
+        {/* Technology Loop at the bottom */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-24 border-t border-[#d4d4d4] pt-12 sm:mt-32"
+        >
+          <div className="w-full">
+            <LogoLoop
+              logos={techLogos}
+              speed={60}
+              direction="left"
+              logoHeight={32}
+              gap={48}
+              hoverSpeed={0}
+              scaleOnHover
+              fadeOut={false}
+              fadeOutColor="#F2F2F2"
+              ariaLabel="Technology stack"
+              className="text-[#555555]"
+            />
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
 }
+

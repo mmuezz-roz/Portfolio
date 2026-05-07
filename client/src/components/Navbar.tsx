@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -9,13 +10,32 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-[100] flex justify-center px-3 pt-[max(1rem,env(safe-area-inset-top))] sm:px-4 sm:pt-6">
+    <motion.header 
+      variants={{
+        visible: { y: 0, opacity: 1 },
+        hidden: { y: -100, opacity: 0 },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="pointer-events-none fixed inset-x-0 top-0 z-[100] flex justify-center px-3 pt-[max(1rem,env(safe-area-inset-top))] sm:px-4 sm:pt-6"
+    >
       {/* Narrow centered pill (~30–40% width on desktop) */}
       <div className="pointer-events-auto relative z-[100] w-full max-w-[calc(100%-1.5rem)] md:max-w-[min(40vw,42rem)] md:min-w-[min(100%,22rem)]">
         <nav
-          className="relative z-[100] flex w-full items-center gap-2 rounded-full border border-[#e0e0e0] bg-white px-3 py-2 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.08),0_2px_8px_-4px_rgba(15,23,42,0.06)] sm:gap-3 sm:px-4 sm:py-2.5 md:gap-2 md:px-3 md:py-2"
+          className="relative z-[100] flex w-full items-center gap-2 rounded-full border border-[#e0e0e0] bg-white/80 backdrop-blur-md px-3 py-2 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.08),0_2px_8px_-4px_rgba(15,23,42,0.06)] sm:gap-3 sm:px-4 sm:py-2.5 md:gap-2 md:px-3 md:py-2"
           aria-label="Primary"
         >
           <a
@@ -83,6 +103,6 @@ export function Navbar() {
           </div>
         )}
       </div>
-    </header>
+    </motion.header>
   );
 }
