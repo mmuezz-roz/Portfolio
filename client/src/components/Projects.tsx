@@ -83,22 +83,34 @@ export function Projects() {
 
       {!loading && list.length > 0 && (
         <div className="mt-12 sm:mt-20">
-          <ScrollStack 
-            useWindowScroll={true} 
-            itemDistance={60} 
-            itemStackDistance={35}
-            baseScale={0.88}
-            itemScale={0.025}
-            stackPosition="12%"
-          >
+          {/* Desktop View: ScrollStack */}
+          <div className="hidden md:block">
+            <ScrollStack 
+              useWindowScroll={true} 
+              itemDistance={60} 
+              itemStackDistance={35}
+              baseScale={0.88}
+              itemScale={0.025}
+              stackPosition="12%"
+            >
+              {list.map((p, i) => (
+                <ScrollStackItem key={p.slug} itemClassName="!bg-transparent !p-0 !shadow-none !border-none !rounded-none">
+                  <div className="mx-auto w-full max-w-[min(90vw,1200px)] px-4">
+                    <ProjectCardContent project={p} index={i} />
+                  </div>
+                </ScrollStackItem>
+              ))}
+            </ScrollStack>
+          </div>
+
+          {/* Mobile View: Swipeable Carousel */}
+          <div className="md:hidden flex w-full overflow-x-auto snap-x snap-mandatory gap-6 px-4 pb-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             {list.map((p, i) => (
-              <ScrollStackItem key={p.slug} itemClassName="!bg-transparent !p-0 !shadow-none !border-none !rounded-none">
-                <div className="mx-auto w-full max-w-[min(90vw,1200px)] px-4">
-                  <ProjectCardContent project={p} index={i} />
-                </div>
-              </ScrollStackItem>
+              <div key={p.slug} className="min-w-[85vw] snap-center shrink-0 first:ml-0 last:mr-4">
+                <ProjectCardContent project={p} index={i} />
+              </div>
             ))}
-          </ScrollStack>
+          </div>
 
 
           <div className="mx-auto max-w-content px-4 pt-12 sm:px-6 sm:pt-14 md:px-10 lg:pt-16">

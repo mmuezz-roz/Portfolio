@@ -9,6 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import { ProfileCardJourney } from "@/components/ProfileCardJourney";
 import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export default function App() {
   const heroProfileSlotRef = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

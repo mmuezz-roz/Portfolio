@@ -3,6 +3,30 @@ import type { BlogPost, Project } from "@/types/content";
 /** Mirrors server/data/seed.json — used when the API is unreachable (e.g. client-only `vite`). */
 export const FALLBACK_PROJECTS: Project[] = [
   {
+    title: "Mashbere",
+    slug: "mashbere",
+    description:
+      "A comprehensive project focused on delivering a robust and dynamic user experience.",
+    category: "Full Stack",
+    imageUrl: "/projects/wip.svg",
+    liveUrl: "https://www.mashbere.com/",
+    tags: ["React", "Next.js"],
+    featured: true,
+    order: 1,
+  },
+  {
+    title: "JameesFood",
+    slug: "jameesfood",
+    description:
+      "A tailored web application designed for seamless interactions and performance.",
+    category: "Full Stack",
+    imageUrl: "/projects/wip.svg",
+    liveUrl: "https://www.jameesfood.com/",
+    tags: ["React", "Node"],
+    featured: true,
+    order: 2,
+  },
+  {
     title: "Sway (InstaGlam)",
     slug: "sway-instaglam",
     description:
@@ -12,7 +36,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     liveUrl: "https://sway-frontend-app.vercel.app/",
     tags: ["MongoDB", "Express", "React", "Node", "Socket.io"],
     featured: true,
-    order: 1,
+    order: 3,
   },
   {
     title: "MelodyHub",
@@ -24,7 +48,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     liveUrl: "https://melodyhub-frontend.vercel.app/",
     tags: ["React", "Node", "Express", "MongoDB", "Socket.io"],
     featured: true,
-    order: 2,
+    order: 4,
   },
   {
     title: "HACA Landing",
@@ -36,7 +60,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     liveUrl: "https://haca-landing-page-six.vercel.app/",
     tags: ["React", "Tailwind", "Vercel"],
     featured: true,
-    order: 3,
+    order: 5,
   },
   {
     title: "TaskFlow",
@@ -48,7 +72,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     liveUrl: "https://todo-list-phi-nine-73.vercel.app/",
     tags: ["React", "TypeScript", "Vercel"],
     featured: true,
-    order: 4,
+    order: 6,
   },
   {
     title: "Product suite (WIP)",
@@ -60,7 +84,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     liveUrl: "#contact",
     tags: ["MERN", "Private"],
     featured: true,
-    order: 5,
+    order: 7,
   },
 ];
 
